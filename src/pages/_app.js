@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "../style/theme";
-import { UserContext } from "../src/components/UserContext";
+import { theme } from "../lib/theme";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -28,9 +27,7 @@ export default function MyApp(props) {
       </Head>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <UserContext>
-          <Component {...pageProps} />
-        </UserContext>
+        <Component {...pageProps} />
       </MuiThemeProvider>
     </>
   );
